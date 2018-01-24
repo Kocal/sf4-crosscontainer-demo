@@ -1,0 +1,13 @@
+imports:
+    - features/bootstrap/config/suites.yml
+
+default:
+    extensions:
+        FriendsOfBehat\SymfonyExtension:
+            kernel:
+                class: App\Kernel
+                bootstrap: features/bootstrap/bootstrap.php
+        FriendsOfBehat\ContextServiceExtension:
+            imports:
+                - "features/bootstrap/config/services.yml"
+        FriendsOfBehat\CrossContainerExtension: ~

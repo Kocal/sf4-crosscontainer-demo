@@ -1,0 +1,7 @@
+services:
+    test_context:
+        class: Features\TestContext
+        arguments:
+            - '@__symfony__.App\Service\TestService'
+        tags:
+            - { name: fob.context_service }

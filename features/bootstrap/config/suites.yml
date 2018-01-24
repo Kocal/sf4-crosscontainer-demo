@@ -1,0 +1,7 @@
+default:
+    suites:
+        app_features:
+            paths:
+              - '%paths.base%/features/application'
+            contexts_services:
+                - test_context
