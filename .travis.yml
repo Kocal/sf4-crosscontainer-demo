@@ -1,0 +1,25 @@
+sudo: false
+dist: trusty
+
+language: php
+php:
+  - '7.2'
+
+cache:
+  directories:
+    - bin
+    - vendor
+    - ~/.composer/cache/files
+
+before_install:
+  # PHP
+  - phpenv config-rm xdebug.ini
+  - echo "extension=apcu.so" >> ~/.phpenv/versions/$(phpenv version-name)/etc/conf.d/travis.ini
+  # Composer
+  - composer install --no-interaction --prefer-dist
+
+before_script:
+  - cp .env.test .env
+
+script:  vendor/bin/behat
+
