@@ -19,7 +19,7 @@ before_install:
   - composer install --no-interaction --prefer-dist
 
 before_script:
-  - cp .env.test .env
+  - cp .env.dist .env
 
 script:  vendor/bin/behat
 
